@@ -26,14 +26,23 @@ addItem('eggs');
 addItem('onions');
 addItem('green peppers');
 addItem('tomatoes');
-addItem('deli ham');
-addItem('cheddar cheese');
+// addItem('deli ham');
+// addItem('cheddar cheese');
 
 listItems();
 // empty();
 
+function isFull() {
+  if (basket.length < maxItems) {
+    return false;
+  } else {
+    return true;
+  }
+}
+console.log(isFull());
+
 console.log(`Basket is ${basket}`);
-console.log('Adding apples (expect true)', addItem('apples'));
+// console.log('Adding apples (expect true)', addItem('apples'));
 console.log(`Basket is now ${basket}`);
 
 
