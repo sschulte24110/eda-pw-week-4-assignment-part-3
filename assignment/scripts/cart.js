@@ -5,10 +5,21 @@ console.log('***** Cart Functions *****');
 const basket = [];
 const maxItems = 5;
 
+addItem('eggs');
+addItem('onions');
+addItem('green peppers');
+addItem('tomatoes');
+// addItem('deli ham');
+// addItem('cheddar cheese');
+
+
+// Need to figure out how to condense this function.
 function addItem(item) {
   basket.push(item);
-  if (basket.includes(item)) {
+  if (basket.length === 0 || basket.length === 1 || basket.length === 2 || basket.length === 3 || basket.length === 4) {
     return true;
+  } else if (isFull() === true) {
+    return false;
   }
 }
 
@@ -17,20 +28,12 @@ function listItems() {
     console.log(basket[i]);
   }
 }
+listItems();
 
 function empty() {
   basket.splice(0, basket.length);
 }
 
-addItem('eggs');
-addItem('onions');
-addItem('green peppers');
-addItem('tomatoes');
-// addItem('deli ham');
-// addItem('cheddar cheese');
-
-listItems();
-// empty();
 
 function isFull() {
   if (basket.length < maxItems) {
@@ -42,7 +45,7 @@ function isFull() {
 console.log(isFull());
 
 console.log(`Basket is ${basket}`);
-// console.log('Adding apples (expect true)', addItem('apples'));
+console.log(basket.length);
 console.log(`Basket is now ${basket}`);
 
 
