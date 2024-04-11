@@ -9,14 +9,14 @@ addItem('eggs');
 addItem('onions');
 addItem('green peppers');
 addItem('tomatoes');
-// addItem('deli ham');
-// addItem('cheddar cheese');
+// console.log(addItem('deli ham'));
+// console.log(addItem('cheddar cheese'));
 
 
 // Need to figure out how to condense this function.
 function addItem(item) {
   basket.push(item);
-  if (basket.length === 0 || basket.length === 1 || basket.length === 2 || basket.length === 3 || basket.length === 4) {
+  if (basket.length <= 4) {
     return true;
   } else if (isFull() === true) {
     return false;
@@ -43,6 +43,10 @@ function isFull() {
   }
 }
 console.log(isFull());
+
+function removeItem(item) {
+
+}
 
 console.log(`Basket is ${basket}`);
 console.log(basket.length);
