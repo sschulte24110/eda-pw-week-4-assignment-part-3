@@ -9,11 +9,10 @@ addItem('eggs');
 addItem('onions');
 addItem('green peppers');
 addItem('tomatoes');
-// console.log(addItem('deli ham'));
-// console.log(addItem('cheddar cheese'));
+// console.log(addItem('ham'));
+// addItem('cheddar cheese');
 
 
-// Need to figure out how to condense this function.
 function addItem(item) {
   basket.push(item);
   if (basket.length <= 4) {
@@ -34,19 +33,23 @@ function empty() {
   basket.splice(0, basket.length);
 }
 
-
 function isFull() {
   if (basket.length < maxItems) {
     return false;
-  } else {
+  } 
     return true;
   }
-}
 console.log(isFull());
 
+// Need to figure out test issue on this
 function removeItem(item) {
-
+  let elementPosition = basket.indexOf(item);
+  if (elementPosition !== -1) {
+     let item = basket.splice(elementPosition, 1);
+     return item;
+  } 
 }
+removeItem('spinach');
 
 console.log(`Basket is ${basket}`);
 console.log(basket.length);
