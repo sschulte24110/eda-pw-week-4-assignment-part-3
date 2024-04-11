@@ -2,7 +2,39 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
+const basket = [];
+const maxItems = 5;
 
+function addItem(item) {
+  basket.push(item);
+  if (basket.includes(item)) {
+    return true;
+  }
+}
+
+function listItems() {
+  for (let i = 0; i < basket.length; i++) {
+    console.log(basket[i]);
+  }
+}
+
+function empty() {
+  basket.splice(0, basket.length);
+}
+
+addItem('eggs');
+addItem('onions');
+addItem('green peppers');
+addItem('tomatoes');
+addItem('deli ham');
+addItem('cheddar cheese');
+
+listItems();
+// empty();
+
+console.log(`Basket is ${basket}`);
+console.log('Adding apples (expect true)', addItem('apples'));
+console.log(`Basket is now ${basket}`);
 
 
 
