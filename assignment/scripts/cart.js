@@ -50,6 +50,7 @@ addItem('cheddar cheese');
 console.log(addItem('ham'));
 // console.log(removeItem('spinach'));
 
+// empty();
 listItems();
 console.log(isFull());
 console.log(`Basket is ${basket}`);
