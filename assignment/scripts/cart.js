@@ -6,19 +6,19 @@ const basket = [];
 const maxItems = 5;
 
 addItem('eggs');
-addItem('onions');
-addItem('green peppers');
-addItem('tomatoes');
-// console.log(addItem('ham'));
-// addItem('cheddar cheese');
-
+// addItem('onions');
+addItem('spinach');
+// addItem('tomatoes');
+addItem('cheddar cheese');
+console.log(addItem('ham'));
+removeItem('spinach');
 
 function addItem(item) {
-  basket.push(item);
   if (basket.length <= 4) {
-    return true;
+    basket.push(item);
+    return (`${item} has been added.`, true);
   } else if (isFull() === true) {
-    return false;
+    return ('Cart is full.', false)
   }
 }
 
@@ -45,11 +45,12 @@ console.log(isFull());
 function removeItem(item) {
   let elementPosition = basket.indexOf(item);
   if (elementPosition !== -1) {
-     let item = basket.splice(elementPosition, 1);
-     return item;
-  } 
+    basket.splice(elementPosition, 1);
+    return item;
+  } else if(elementPosition === -1) {
+    return null;
+  }
 }
-removeItem('spinach');
 
 console.log(`Basket is ${basket}`);
 console.log(basket.length);
