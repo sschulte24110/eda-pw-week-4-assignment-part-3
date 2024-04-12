@@ -5,14 +5,6 @@ console.log('***** Cart Functions *****');
 const basket = [];
 const maxItems = 5;
 
-addItem('eggs');
-// addItem('onions');
-addItem('spinach');
-// addItem('tomatoes');
-addItem('cheddar cheese');
-console.log(addItem('ham'));
-removeItem('spinach');
-
 function addItem(item) {
   if (basket.length <= 4) {
     basket.push(item);
@@ -27,7 +19,6 @@ function listItems() {
     console.log(basket[i]);
   }
 }
-listItems();
 
 function empty() {
   basket.splice(0, basket.length);
@@ -39,9 +30,7 @@ function isFull() {
   } 
     return true;
   }
-console.log(isFull());
 
-// Need to figure out test issue on this
 function removeItem(item) {
   let elementPosition = basket.indexOf(item);
   if (elementPosition !== -1) {
@@ -52,6 +41,17 @@ function removeItem(item) {
   }
 }
 
+
+addItem('eggs');
+addItem('onions');
+// addItem('spinach');
+// addItem('tomatoes');
+addItem('cheddar cheese');
+console.log(addItem('ham'));
+// console.log(removeItem('spinach'));
+
+listItems();
+console.log(isFull());
 console.log(`Basket is ${basket}`);
 console.log(basket.length);
 console.log(`Basket is now ${basket}`);
