@@ -40,6 +40,7 @@ function removeItem(item) {
   let elementPosition = basket.indexOf(item);
   if (elementPosition !== -1) {
     basket.splice(elementPosition, 1);
+    console.log(`Removed ${item}.`);
     return item;
   } else if(elementPosition === -1) {
     return null;
